@@ -2,8 +2,8 @@ from models import Quiz, MistakeList, NoteManager
 
 
 def main():
-    quiz = Quiz("qustions.json")
-    mistakes = MistakeList("mistaks.json")
+    quiz = Quiz("questions.json")
+    mistakes = MistakeList("mistakes.json")
     notes = NoteManager("notes.json")
 
     while True:
@@ -11,7 +11,7 @@ def main():
         if user_choice == "1":
             quiz.run(mistakes,notes, mode="full")
         elif user_choice == "2":
-            mistakes(mistakes, notes,mode="mistake")
+            quiz.run(mistakes, notes,mode="mistake")
         elif user_choice == "3":
             notes.view_all()
         elif user_choice == "4":

@@ -24,13 +24,13 @@ class Question:
 class Quiz:
     def __init__(self,file_path):
         self.questions_file = file_path
-        self.questions = self.load()
+        self.questions = self.load_questions()
 
 
     def load_questions(self):
         with open(self.questions_file,"r") as f:
             data = json.load(f)
-        return [Question(q["id"]), q["question"], q["options"], q["answer"] for q in data]
+        return [Question(q["id"], q["question"], q["options"], q["answer"]) for q in data]
 
     def run(self,mistakes, notes, mode="full"):
         if mode == "mistake":
@@ -38,7 +38,7 @@ class Quiz:
             if not data:
                 print("\n No mistakes to review!")
                 return
-            questions = [Question(m["id"], m["question"], m["answer"]) for m in data]
+            questions = [Question(m["id"], m["question"],m["options"], m["answer"]) for m in data]
         else:
             questions = self.questions
         random.shuffle(questions)
