@@ -127,7 +127,41 @@ class NoteManager:
             json.dump(self.notes, f, indent=2)
 
     def add(self, qid, question_text, note_text):
-        pass
+        qid = str(qid)
+
+        if qid in self.notes:
+            print(f"\n Existing notes for Q{qid}:")
+            for i, old_note in enumerate(self.notes[qid]["notes"], start=1):
+                print(f"    {i}.{old_note}")
+            
+            print("\nWhat would you like to do?")
+            print("A) Append (keep old + add new)")
+            print("B) Replace (overwrite old note)")
+            print("C) No additional note")
+
+            choice = input("Choose A/B/C: ").strip().upper()
+
+            if choice =="A":
+                self.notes[qid]["notes"].append(note_text)
+                print("New note appended.")
+            elif choice =="B":
+                self.notes[qid]["notes"] = [note_text]
+                print("Note replaced.")
+            elif choice == "C":
+                print("No new note added.")
+            else:
+                print("Invalid choice. Keeping old notes only.")
+        else:
+            self.notes[qid] = {
+                "question": question_text,
+                "notes": [note_text]
+            }
+            print("Node added")
+        self.save()
+
+
+
+
     def view_all(self):
         if not self.notes:
             print("\n No notes yet.")
