@@ -36,7 +36,7 @@ class Quiz:
         if mode == "mistake":
             data = mistakes.get_all()
             if not data:
-                print("\n No mistakes to review!")
+                print("\nNo mistakes to review!")
                 return
             questions = [Question(m["id"], m["question"],m["options"], m["answer"]) for m in data]
         else:
@@ -102,12 +102,6 @@ class MistakeList:
         return self.mistakes
     
 
-        
-
-
-
-
-
 class NoteManager:
     def __init__(self,file_path):
         self.file_path = file_path
@@ -158,8 +152,6 @@ class NoteManager:
             }
             print("Node added")
         self.save()
-
-
 
 
     def view_all(self):
