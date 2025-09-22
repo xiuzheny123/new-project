@@ -84,3 +84,27 @@ class NoteManager:
         self.file_path = file_path
         self.notes = self.load()
         
+    def load(self):
+        try:
+            with open(self.file_path, "r") as f:
+                content = f.read().strip()
+                if not content:
+                    return {}
+                return json.loads(content)
+        except FileNotFoundError:
+            return {}
+    def save(self):
+        with open(self.file_path, "w") as f:
+            json.dump(self.notes, f, indent=2)
+
+    def add(self, qid, question_text, note_text):
+        pass
+    def view_all(self):
+        if not self.notes:
+            print("\n No notes yet.")
+            return
+        print("\n----Your notes----")
+        for qid, data in self.notes.items():
+            print(f"Q{qid}: {data['question']}")
+            for i, note in enumerate(data["notes"], start=1):
+                print(f"    {i}.{note}")
