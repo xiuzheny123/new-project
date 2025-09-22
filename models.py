@@ -150,7 +150,7 @@ class NoteManager:
                 "question": question_text,
                 "notes": [note_text]
             }
-            print("Node added")
+            print("Note added")
         self.save()
 
 

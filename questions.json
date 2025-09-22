@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "question": "What is the purpose of list comprehensions in Python?",
-    "options": ["To execute loops faster", "To concisely create lists", "To define functions", "To manage imports"],
+    "question": "Which special string form is meant for developers and debugging?",
+    "options": ["print()", "repr()", "str()", "doc()"],
     "answer": "B"
    
   },
@@ -17,18 +17,6 @@
     "question": "Which built-in method is used to provide a human-readable string representation of an object?",
     "options": ["__repr__", "__init__", "__str__", "__doc__"],
     "answer": "C"
-  },
-  {
-    "id": 4,
-    "question": "In Python, everything is considered a(n):",
-    "options": ["Primitive type", "Object", "Variable", "Constant"],
-    "answer": "B"
-  },
-  {
-    "id": 5,
-    "question": "Which special string form is meant for developers and debugging?",
-    "options": ["print()", "repr()", "str()", "doc()"],
-    "answer": "B"
   }
 
 
