@@ -51,18 +51,18 @@ class Quiz:
                 if mistakes.contains(q.qid):
                     remove = input("Remove from mistake list? (y/n): ").strip().lower()
                     if remove =="y":
-                        mistakes.remove(q.id)
+                        mistakes.remove(q.qid)
                         print("Removed from mistake list")
                     else:
                         print("kept in mistake list")
-                else:
-                    print(f" Wrong. Correct answer:{q.answer}")
-                    mistakes.add(q)
+            else:
+                print(f"Wrong. Correct answer:{q.answer}")
+                mistakes.add(q)
                 
-                add_note = input("Would you like to add a note? (y/n): ").strip().lower()
-                if add_note == "y":
-                    note_text = input("Enter your note: ").strip()
-                    notes.add(q.qid, q.text,note_text)
+            add_note = input("Would you like to add a note? (y/n): ").strip().lower()
+            if add_note == "y":
+                note_text = input("Enter your note: ").strip()
+                notes.add(q.qid, q.text,note_text)
             print(f"\nQuiz finished! Score:{score}/{len(questions)}")
 
 class MistakeList:
