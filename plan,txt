@@ -1,0 +1,7 @@
+a quiz app
+-user can register account and login account to do the quiz
+-user can choice do the full quiz or question from mistake list
+-user can make notes
+-user can choose to move out a question out of mistake list if they did it correctly next time
+-user can choose particular questions to mistake list, so that we can delete the old quiz and add new quiz 
+but avoiding delete some good questions
