@@ -9,11 +9,11 @@ def main():
     while True:
         user_choice = input("Select:\n\t1 Take full Quiz \n\t2 Take Mistake Quiz\n\t3 View Notes\n\t4 Quit")
         if user_choice == "1":
-            quiz()
+            quiz.run(mistakes,notes, mode="full")
         elif user_choice == "2":
-            mistakes()
+            mistakes(mistakes, notes,mode="mistake")
         elif user_choice == "3":
-            notes()
+            notes.view_all()
         elif user_choice == "4":
             print("Goodbye")
             break

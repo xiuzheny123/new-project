@@ -32,9 +32,38 @@ class Quiz:
             data = json.load(f)
         return [Question(q["id"]), q["question"], q["options"], q["answer"] for q in data]
 
-    def run(self ):
-        pass
-
+    def run(self,mistakes, notes, mode="full"):
+        if mode == "mistake":
+            data = mistakes.get_all()
+            if not data:
+                print("\n No mistakes to review!")
+                return
+            questions = [Question(m["id"], m["question"], m["answer"]) for m in data]
+        else:
+            questions = self.questions
+        random.shuffle(questions)
+        score = 0
+        for i, q in enumerate(questions, start=1):
+            ans = q.ask(i)
+            if ans == q.answer:
+                print("Correct!")
+                score+=1
+                if mistakes.contains(q.qid):
+                    remove = input("Remove from mistake list? (y/n): ").strip().lower()
+                    if remove =="y":
+                        mistakes.remove(q.id)
+                        print("Removed from mistake list")
+                    else:
+                        print("kept in mistake list")
+                else:
+                    print(f" Wrong. Correct answer:{q.answer}")
+                    mistakes.add(q)
+                
+                add_note = input("Would you like to add a note? (y/n): ").strip().lower()
+                if add_note == "y":
+                    note_text = input("Enter your note: ").strip()
+                    notes.add(q.qid, q.text,note_text)
+            print(f"\nQuiz finished! Score:{score}/{len(questions)}")
 
 class MistakeList:
     def __init__(self,file_path):
