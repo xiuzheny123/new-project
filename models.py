@@ -63,7 +63,7 @@ class Quiz:
             if add_note == "y":
                 note_text = input("Enter your note: ").strip()
                 notes.add(q.qid, q.text,note_text)
-            print(f"\nQuiz finished! Score:{score}/{len(questions)}")
+        print(f"\nQuiz finished! Score:{score}/{len(questions)}")
 
 class MistakeList:
     def __init__(self,file_path):

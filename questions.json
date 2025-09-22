@@ -1,33 +1,35 @@
 [
-    {
-      "id": 1,
-      "question": "What is 2 + 2?",
-      "options": ["3", "4", "5", "22"],
-      "answer": "B"
-    },
-    {
-      "id": 2,
-      "question": "What is the capital of France?",
-      "options": ["Berlin", "Paris", "Rome", "Madrid"],
-      "answer": "B"
-    },
-    {
-      "id": 3,
-      "question": "Which planet is known as the Red Planet?",
-      "options": ["Earth", "Mars", "Jupiter", "Venus"],
-      "answer": "B"
-    },
-    {
-      "id": 4,
-      "question": "Who wrote 'Romeo and Juliet'?",
-      "options": ["William Shakespeare", "Charles Dickens", "Mark Twain", "Leo Tolstoy"],
-      "answer": "A"
-    },
-    {
-      "id": 5,
-      "question": "Which element has the chemical symbol 'O'?",
-      "options": ["Gold", "Oxygen", "Osmium", "Oxide"],
-      "answer": "B"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "question": "What is the purpose of list comprehensions in Python?",
+    "options": ["To execute loops faster", "To concisely create lists", "To define functions", "To manage imports"],
+    "answer": "B"
+   
+  },
+  {
+    "id": 2,
+    "question": "What is the role of the __init__ method in a Python class?",
+    "options": ["To define an abstract method", "To create a copy of the class", "To initialize object attributes", "To delete the object"],
+    "answer": "C"
+  },
+  {
+    "id": 3,
+    "question": "Which built-in method is used to provide a human-readable string representation of an object?",
+    "options": ["__repr__", "__init__", "__str__", "__doc__"],
+    "answer": "C"
+  },
+  {
+    "id": 4,
+    "question": "In Python, everything is considered a(n):",
+    "options": ["Primitive type", "Object", "Variable", "Constant"],
+    "answer": "B"
+  },
+  {
+    "id": 5,
+    "question": "Which special string form is meant for developers and debugging?",
+    "options": ["print()", "repr()", "str()", "doc()"],
+    "answer": "B"
+  }
+
+
+]
