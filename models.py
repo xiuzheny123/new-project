@@ -9,18 +9,16 @@ class Question:
         self.answer = answer
 
     def ask(self,number=None):
-        if number:
-            print(f"\nQ{number}: {self.text}")
-        else:
-            print(f"{self.qid}: {self.text}")
+       
+        print(f"\nQ{number}: {self.text}")
+        
 
         for i, opt in enumerate(self.options):
             print(f"{chr(65+i)}){opt}")
 
         return input("Your answer (A/B/C/D): ").strip().upper()
 
-
-        # ask question here
+        
 class Quiz:
     def __init__(self,file_path):
         self.questions_file = file_path
@@ -131,7 +129,7 @@ class NoteManager:
             print("\nWhat would you like to do?")
             print("A) Append (keep old + add new)")
             print("B) Replace (overwrite old note)")
-            print("C) No additional note")
+            
 
             choice = input("Choose A/B/C: ").strip().upper()
 
@@ -141,8 +139,6 @@ class NoteManager:
             elif choice =="B":
                 self.notes[qid]["notes"] = [note_text]
                 print("Note replaced.")
-            elif choice == "C":
-                print("No new note added.")
             else:
                 print("Invalid choice. Keeping old notes only.")
         else:
